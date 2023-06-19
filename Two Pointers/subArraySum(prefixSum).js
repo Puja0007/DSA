@@ -22,3 +22,8 @@ function subarraySum(arr,sum){
    return cnt;
  
  }
+
+ // explaination of the above code
+  // explaination by writting : 
+  // 1. we are using a map to store the cummulative sum and the number of times it has occured
+  
