@@ -1,6 +1,7 @@
 // for negetive integers
 
-function subarraySum(arr,sum){
+function subarraySum(sum,arr){
+  nums.sort(function(a, b){return parseInt(a) - parseInt(b)});
     let map = new Map();
    let cumsum = 0; let cnt = 0;
    map.set(0, 1);
@@ -8,6 +9,7 @@ function subarraySum(arr,sum){
        cumsum += arr[i];
        if (map.has(cumsum - sum)){
   cnt += map.get(cumsum - sum);
+  console.log(i)
       }
          
        if (map.has(cumsum)){
@@ -22,6 +24,9 @@ function subarraySum(arr,sum){
    return cnt;
  
  }
+
+ let target = 7, nums = [2,3,1,2,4,3];
+ console.log(subarraySum(target, nums));
 
  // explaination of the above code
   // explaination by writting : 
