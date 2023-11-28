@@ -1,4 +1,5 @@
-function MaxCosecutiveOnes(nums){
+function MaximumOnesSeries(nums){
+
     let count = 0;
     let maxCount = 0
 
@@ -17,9 +18,8 @@ function MaxCosecutiveOnes(nums){
   }
 
   return maxCount;
-
-   
 }
 
-let nums = [1, 1, 0, 1, 1, 1];
-console.log(MaxCosecutiveOnes(nums))
+let nums = [1, 1, 0, 1, 1, 1,0,0,0,1,1,1,1];
+
+console.log(MaximumOnesSeries(nums))
