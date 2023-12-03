@@ -12,7 +12,7 @@ function MaximumSubArraySum(nums,k){
             maxLen = Math.max(maxLen,len);
            
           // right++
-        }
+        } 
         right++;
     }
 
@@ -29,5 +29,5 @@ function MaximumSubArraySum(nums,k){
  
 */
 
-let nums = [2,3,5,1,9];
-console.log(MaximumSubArraySum(nums,10));
+let nums = [-1, 1, 1];
+console.log(MaximumSubArraySum(nums,2));

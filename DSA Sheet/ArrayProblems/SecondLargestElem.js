@@ -15,5 +15,5 @@ function LargestElement(arr){
   
 }
 
-let arr = [2,5,1,3,0]
+let arr = [1,2,3,4,5,7,7,4];
 console.log(LargestElement(arr));

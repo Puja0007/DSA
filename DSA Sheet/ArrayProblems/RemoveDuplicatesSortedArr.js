@@ -12,6 +12,7 @@ function removeDuplicates(nums) {
         if (nums[j] != nums[i]) {
           i++;
           nums[i]=nums[j];
+          
         }
 
         console.log(nums);
@@ -22,4 +23,9 @@ function removeDuplicates(nums) {
 let arr = [1, 1,1, 2, 2, 3, 4, 5, 5, 5, 6];
 
 console.log(removeDuplicates(arr));
+
+// 1.i=0; j =3,
+// [1,2,1,1,3,4,5,5,5,6]
+// [1,2,3]
+// 2.i=1,j=4, 
 
