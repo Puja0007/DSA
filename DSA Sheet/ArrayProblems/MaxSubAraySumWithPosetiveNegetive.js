@@ -1,18 +1,17 @@
 function MaximumSubArraySumWithPosNeg(nums,k){
     let n = nums.length;
     let sum =0,maxLen=0;
+    let prefixSumMap = new Map();
 
     for(let i=0; i<n; i++){
-        sum = nums[i];
-        for(let j =i; j<n; j++){
-            if(i != j){
-                sum = sum +nums[j];
-            }
-            
-            if(sum === k){
-                 maxLen = (maxLen,j-i+1);
-
-            }
+        sum = sum + nums[i];
+        if(!prefixSumMap.has(sum)){
+            prefixSumMap.set(sum,i);
+        }
+        if(sum === k){
+            maxLen = Math.max(maxLen,i+1);
+        }else if(prefixSumMap.has(sum-k)){
+            maxLen = Math.max(maxLen,i-prefixSumMap.get(sum-k));
         }
     }
 
@@ -20,4 +19,4 @@ function MaximumSubArraySumWithPosNeg(nums,k){
 }
 
 let nums = [-1, 1, 1];
-console.log(MaximumSubArraySumWithPosNeg(nums,0))
+console.log(MaximumSubArraySumWithPosNeg(nums,1))
