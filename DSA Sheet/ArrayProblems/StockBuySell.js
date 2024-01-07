@@ -8,7 +8,7 @@ function StockBuySell(prices){
     min = Math.min(min,prices[i]);
     diff = Math.max(diff,prices[i]-min);
   }
-    return diff;
+    return diff; 
 }
 
   

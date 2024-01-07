@@ -1,28 +1,29 @@
 function LeadersInArray(nums){
     let n = nums.length;
     let left = 0;
-    let right = n-1;
-    let res = [];
-    res.push(nums[n-1]);
+    let right = 1;
+    let res = [nums[n-1]];
 
-    while(left<right){
-        
-        while(right>left){
-            if(nums[right]<nums[left]){
-                right--;
-            }else{
-                break;
-            }
+    while(right<n){
+        console.log(nums[left]);
+        console.log(nums[right]);
+        while(nums[left]>nums[right] && right<n){
+            right++;
         }
-        if(right== left){
+        console.log("right",right);
+
+        if(right == n){
             res.push(nums[left]);
         }
+        
         left++;
-        right = n-1;
+        right=left+1;
 
     }
-    
     return res;
+
+
+   
 }
 
 let nums = [10, 22, 12, 3, 0, 6];

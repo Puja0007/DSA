@@ -1,33 +1,31 @@
-function deepCopy(value){
+function setMatrixZero(matrix){
+    let row = matrix.length;
+    let col = matrix[0].length;
 
-    if(value === null || typeof value !== 'object'){
-        return value;         
-    }else if(Array.isArray(value)){
-        let copyArr = [];
-        for(let i=0; i<value.length; i++){
-        copyArr[i] = deepCopy(value[i]);
-        }
-    }else if(typeof value === 'object'){
-        let copyObj ={}
-        for(let key in value){
-            if(value.hasOwnProperty(key)){
-                copyObj[key] = deepCopy(value[key]);
+    let rowArr = new Array(row).fill(-1);
+    let colArr = new Array(col).fill(-1);
+
+    for(let i =0; i<row; i++){
+        for(let j =0; j<col; j++){
+            if(matrix[i][j]==0){
+                rowArr[i] = 0;
+                colArr[j] = 0;
             }
         }
-
-        return copyObj;
     }
 
-    return value
+    for(let i =0; i<row; i++){
+        for(let j =0; j<col; j++){
+            if(rowArr[i]==0 || colArr[j] == 0){
+                matrix[i][j]=0;
+            }
+        }
+    }
+    return matrix;
 }
 
+let matrix = [[1,1,1],[1,0,1],[1,1,1]];
 
-const originalObject = {
-    a: 1,
-    b: {
-        c: 2,
-        d: [3, 4]
-    }
-};
+console.log(setMatrixZero(matrix));
 
-console.log(deepCopy(originalObject));
+

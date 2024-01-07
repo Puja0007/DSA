@@ -1,20 +1,21 @@
-function SecondLargestElement(nums){
-    let largeElm = -Infinity;
-    let secondLargeElm = -Infinity;
+function secondLargestElem(nums){
     let n = nums.length;
+    let max = -Infinity;
+    let secondMax = -Infinity;
 
-    for(let i =0; i<nums.length; i++){
-        if(nums[i]>largeElm){
-            secondLargeElm = largeElm;
-            largeElm = nums[i]
-        }else if(nums[i]<largeElm && nums[i]>secondLargeElm){
-            secondLargeElm = nums[i];
+    for(let i=0; i<n; i++){
+        
+        if(nums[i]>max){
+            secondMax = max;
+            max = nums[i];
+        }else if(nums[i]>secondMax && nums[i] != max){
+            secondMax = nums[i];
         }
+
     }
+    return secondMax;
 
-    return secondLargeElm;
+
+
+     
 }
-
-let nums = [1,2,4,7,7,5];
-
-console.log(SecondLargestElement(nums));
