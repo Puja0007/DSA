@@ -1,19 +1,18 @@
-function FindTheMissingElem(n,arr){
-   
-    let j = 1;
+function FindTheMissingElem(nums){
+    let n = nums.length;
+   let targateSum = (n * (n + 1)) / 2;
 
-    for(let i=0;i<arr.length; i++){
-        if(arr[i] == j){
-          j++;
-        }
-        else{
-            return j;
-        }
-
+    let sum = 0;
+    for(let i = 0; i < nums.length; i++){
+        sum += nums[i];
     }
+
+    return targateSum - sum;
+
+   
 }
 
-let N = 5;
-let arr = [1,2,4,5];
 
-console.log(FindTheMissingElem(N,arr));
+let nums = [1,2,4,5];
+
+console.log(FindTheMissingElem(nums));

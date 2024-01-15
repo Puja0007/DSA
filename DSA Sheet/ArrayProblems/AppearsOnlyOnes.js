@@ -1,12 +1,12 @@
-function AppearOnlyOne(arr){
+function AppearOnlyOne(nums){
     let xor =0;
 
-    for(let i=0; i<arr.length; i++){
-        xor = xor ^ arr[i];
+    for(let i=0; i<nums.length; i++){
+        xor = xor ^ nums[i];
     }
 
     return xor;
 }
 
-let arr = [4,1,2,1,2];
-console.log(AppearOnlyOne(arr));
+let nums = [4,1,2,1,2];
+console.log(AppearOnlyOne(nums));
